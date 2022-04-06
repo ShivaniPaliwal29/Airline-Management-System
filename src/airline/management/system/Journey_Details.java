@@ -132,7 +132,9 @@ public class Journey_Details extends javax.swing.JFrame {
         result.setSelectionBackground(new java.awt.Color(0, 0, 51));
         jScrollPane3.setViewportView(result);
 
-        src.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "", "Mumbai", "Kolkata", "Patna" }));
+        src.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Mumbai", "Kolkata", "Patna" }));
+        src.setSelectedIndex(-1);
+        src.setToolTipText("");
 
         des.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "", "Mumbai", "Kolkata", "Patna" }));
         des.addActionListener(new java.awt.event.ActionListener() {

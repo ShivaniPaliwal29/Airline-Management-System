@@ -26,8 +26,8 @@ public class AirlineManagementSystem {
        //obj.insertFlightSector("AJ970","INDIGO 1","Kolkata","Patna","100","A","First Class");
        //obj.insertFlightSector("AJ900","INDIGO 2","Kolkata","Patna","550","B","Second Class");
        //obj.insertFlightSector("AJ960","INDIGO 3","Kolkata","Patna","30","C","Third Class");
-        obj.insertPayment(100,null,"1234987623458765",1200,"2021-11-2","8292560588");
-        obj.insertPayment(103,null,"1234987623456543",1700,"2021-11-21","9123989805");
+        //obj.insertPayment(100,null,"1234987623458765",1200,"2021-11-2","8292560588");
+        //obj.insertPayment(103,null,"1234987623456543",1700,"2021-11-21","9123989805");
         //obj.insertPayment(100,null,"1234987623458765",1200,"2021-11-2","8292560588");
     }
     

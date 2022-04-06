@@ -42,24 +42,11 @@ public class Db {
             e.printStackTrace();
         }
     }
-    public void insertReservation(String p,String tk,String f,String t,String s,String des,String d){
-        try{
-            PreparedStatement ps=con.prepareStatement("insert into Reservation values(?,?,?,?,?,?,?)");
-            ps.setString(2,tk);
-            ps.setString(1,p);
-            ps.setString(3,f);
-            ps.setString(4,t);
-            ps.setString(7,d);
-            ps.setString(5,s);
-            ps.setString(6,des);
-            if(ps.executeUpdate()>0)
-              System.out.println("inserted successfully");  
-            
-        }catch(Exception e){
-            e.printStackTrace();
-        }
-    }
-    public void insertPassenger(int p,String tk,String f,String t,String s,String des,String d,String fl){
+    int p;
+    public void insertPassenger(String tk,String f,String t,String s,String des,String d,String fl){
+        
+         p=(int) Math.floor(Math.random() * 100);
+        System.out.println(p);
         try{
             PreparedStatement ps=con.prepareStatement("insert into Passenger values(?,?,?,?,?,?,?,?)");
             ps.setString(2,tk);
@@ -70,6 +57,29 @@ public class Db {
             ps.setString(5,s);
             ps.setString(6,des);
             ps.setString(8,fl);
+            if(ps.executeUpdate()>0)
+              System.out.println("inserted successfully");  
+            
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+    }
+    public void insertReservation(String f,String t,String s,String des,String d){
+        try{
+            String q=Integer.toString(p);
+            int ticket;
+            ticket=(int) Math.floor(Math.random() * 100);
+            String tk=Integer.toString(ticket);
+            tk="AB"+tk;
+            System.out.println(tk);
+            PreparedStatement ps=con.prepareStatement("insert into Reservation values(?,?,?,?,?,?,?)");
+            ps.setString(2,tk);
+            ps.setString(1,q);
+            ps.setString(3,f);
+            ps.setString(4,t);
+            ps.setString(7,d);
+            ps.setString(5,s);
+            ps.setString(6,des);
             if(ps.executeUpdate()>0)
               System.out.println("inserted successfully");  
             
@@ -96,24 +106,9 @@ public class Db {
             e.printStackTrace();
         }
     }
-    public void insertPayment(int p,String ch,String card,int amount,String date,String ph){
+    public void insertPayment(String ch,String card,String date,String ph){
         try{
-            PreparedStatement ps=con.prepareStatement("insert into Payment values(?,?,?,?,?,?)");
-            ps.setInt(1,p);
-            ps.setString(6,ph);
-            ps.setString(2,ch);
-            ps.setString(3,card);
-            ps.setInt(4,amount);
-            ps.setString(5,date);
-            if(ps.executeUpdate()>0)
-              System.out.println("inserted successfully");  
-            
-        }catch(Exception e){
-            e.printStackTrace();
-        }
-    }
-    public void insertCancellation(int p,String ch,String card,int amount,String date,String ph){
-        try{
+            int amount=5999;
             PreparedStatement ps=con.prepareStatement("insert into Payment values(?,?,?,?,?,?)");
             ps.setInt(1,p);
             ps.setString(6,ph);
@@ -164,6 +159,14 @@ public class Db {
     }
     public ResultSet searchReservation(String src,String des)throws Exception{
         PreparedStatement ps = con.prepareStatement("select * from Reservation where src=? AND des =?");
+        ps.setString(1, src);
+        ps.setString(2, des);
+        ResultSet rs = ps.executeQuery();
+ 
+        return rs;
+    }
+    public ResultSet searchFlight(String src,String des)throws Exception{
+        PreparedStatement ps = con.prepareStatement("select * from Flight where src=? AND des =?");
         ps.setString(1, src);
         ps.setString(2, des);
         ResultSet rs = ps.executeQuery();

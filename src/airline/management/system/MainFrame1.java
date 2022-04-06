@@ -43,6 +43,7 @@ public class MainFrame1 extends javax.swing.JFrame {
         jMenuItem4 = new javax.swing.JMenuItem();
         jMenuItem5 = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
+        jMenuItem6 = new javax.swing.JMenuItem();
         jMenu3 = new javax.swing.JMenu();
         jMenu4 = new javax.swing.JMenu();
 
@@ -99,7 +100,6 @@ public class MainFrame1 extends javax.swing.JFrame {
         });
         jMenu1.add(jMenuItem4);
 
-        jMenuItem5.setText("Cancellation");
         jMenuItem5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuItem5ActionPerformed(evt);
@@ -111,14 +111,21 @@ public class MainFrame1 extends javax.swing.JFrame {
 
         jMenu2.setForeground(new java.awt.Color(255, 0, 51));
         jMenu2.setText("Ticket");
+
+        jMenuItem6.setText("Fight_Reservation");
+        jMenuItem6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem6ActionPerformed(evt);
+            }
+        });
+        jMenu2.add(jMenuItem6);
+
         jMenuBar1.add(jMenu2);
 
         jMenu3.setForeground(new java.awt.Color(0, 0, 204));
-        jMenu3.setText("List");
         jMenuBar1.add(jMenu3);
 
         jMenu4.setForeground(new java.awt.Color(255, 0, 0));
-        jMenu4.setText("MISC");
         jMenuBar1.add(jMenu4);
 
         setJMenuBar(jMenuBar1);
@@ -161,6 +168,7 @@ public class MainFrame1 extends javax.swing.JFrame {
 
     private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
         // TODO add your handling code here:
+        new Cancellation().setVisible(true);
     }//GEN-LAST:event_jMenuItem5ActionPerformed
 
     private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
@@ -181,6 +189,12 @@ public class MainFrame1 extends javax.swing.JFrame {
         //payment
         new Payment_Details().setVisible(true);
     }//GEN-LAST:event_jMenuItem4ActionPerformed
+
+    private void jMenuItem6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem6ActionPerformed
+        // TODO add your handling code here:
+        //reservation
+        new Flight_Info().setVisible(true);
+    }//GEN-LAST:event_jMenuItem6ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -231,6 +245,7 @@ public class MainFrame1 extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JMenuItem jMenuItem5;
+    private javax.swing.JMenuItem jMenuItem6;
     private javax.swing.JPopupMenu jPopupMenu1;
     private java.awt.PopupMenu popupMenu1;
     // End of variables declaration//GEN-END:variables
